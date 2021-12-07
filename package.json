@@ -1,0 +1,28 @@
+{
+  "name": "angelscripts-stem-docker",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "preversion": "npm test",
+    "release-patch": "npm version patch && npm publish",
+    "release-minor": "npm version minor && npm publish",
+    "release-major": "npm version major && npm publish",
+    "postversion": "git push origin master && git push origin master --tags"
+  },
+  "author": "Boris Filipov",
+  "license": "MIT",
+  "dependencies": {
+    "file-exists": "^5.0.1",
+    "organic-dna-branches": "^1.0.0",
+    "organic-dna-cells-info": "^3.0.1",
+    "organic-dna-repo-loader": "^2.1.1",
+    "organic-stem-skeleton-find-root": "^2.0.1",
+    "yaml": "^1.10.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.3"
+  }
+}
