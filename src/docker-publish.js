@@ -11,12 +11,10 @@ module.exports = function (angel) {
     const rootDNA = await loadDna({ root: repoRoot })
     const cellInfo = getCell(rootDNA, packagejson.name)
     const registry = cellInfo.dna.registry || ''
-    const imageTag = packagejson.name + ':' + packagejson.version
+    const imageTag = packagejson.name + '-' + packagejson.version
     const cmd = [
       `docker tag ${imageTag} ${registry}/${imageTag}`,
-      `docker tag ${imageTag} ${registry}/${packagejson.name}:latest`,
       `docker push ${registry}/${imageTag}`,
-      `docker push ${registry}/${packagejson.name}:latest`
     ].join(' && ')
     console.log('publishing:', cmd)
     const child = exec(cmd)
@@ -28,7 +26,7 @@ module.exports = function (angel) {
           console.log(`done, pushed ${registry}/${imageTag}`)
           return resolve()
         }
-        reject(new Error('failed to publish via cmd:' + cmd.join(' && ')))
+        reject(new Error('failed to publish via cmd:' + cmd))
       })
     })
   })
