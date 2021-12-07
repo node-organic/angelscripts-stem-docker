@@ -13,7 +13,6 @@ module.exports = function (angel) {
     const registry = cellInfo.dna.registry || ''
     const imageTag = packagejson.name + ':' + packagejson.version
     const cmd = [
-      'npx angel docker-build',
       `docker tag ${imageTag} ${registry}/${imageTag}`,
       `docker tag ${imageTag} ${registry}/${packagejson.name}:latest`,
       `docker push ${registry}/${imageTag}`,
