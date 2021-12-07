@@ -1,6 +1,6 @@
 {
   "name": "angelscripts-stem-docker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "[organic-stem-skeleton v3](https://github.com/node-organic/organic-stem-skeleton) based docker related utilities.",
   "main": "index.js",
   "scripts": {
