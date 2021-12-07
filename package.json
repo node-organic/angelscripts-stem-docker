@@ -1,7 +1,7 @@
 {
   "name": "angelscripts-stem-docker",
   "version": "0.1.0",
-  "description": "",
+  "description": "[organic-stem-skeleton v3](https://github.com/node-organic/organic-stem-skeleton) based docker related utilities.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -24,5 +24,13 @@
   "devDependencies": {
     "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/node-organic/angelscripts-stem-docker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/node-organic/angelscripts-stem-docker/issues"
+  },
+  "homepage": "https://github.com/node-organic/angelscripts-stem-docker#readme"
 }
