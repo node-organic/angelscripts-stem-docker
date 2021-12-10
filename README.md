@@ -17,6 +17,8 @@ npm i angelscripts-stem-docker --save-dev
 
 ### build a stem skeleton cell
 
+Build an image of the cell and tag it with `${packagejson.name}-${packagejson.version}`
+
 ```
 $ cd cells/myCell
 $ edit ./Dockerfile
