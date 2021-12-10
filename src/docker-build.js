@@ -69,7 +69,11 @@ module.exports = function (angel) {
 const buildDepLines = async function (cellRoot, repoRoot) {
   let packagejson = await readFile(path.join(cellRoot, 'package.json'), 'utf-8')
   packagejson = JSON.parse(packagejson)
-  const depsresult = await execPromise(`lerna ls --scope ${packagejson.name} --include-dependencies --a --json`)
+  const depsresult = await execPromise(`npx lerna ls --scope ${packagejson.name} --include-dependencies --a --json`, {
+    cwd: repoRoot,
+    maxBuffer: Infinity,
+    env: process.env
+  })
   const deps = JSON.parse(depsresult.stdout)
   const result = []
   for (let i = 0; i < deps.length; i++) {
